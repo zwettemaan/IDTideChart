@@ -102,6 +102,11 @@ after which you need to relaunch InDesign, in order to get another five API call
 If you have an license for JSXGetURL, you can activate it on your workstation, and that will lift the
 restrictions.
 
+To get a license, please use the PluginInstaller application: https://PluginInstaller.com
+
+After installing, browse the store and find JSXGetURL in the Rorohiko catalog. You can then purchase and activate a license 
+from within PluginInstaller.
+
 ## Juicy bits in the sample code
 
 Look for references to `getURL` in the `TideChart.jsx` source code.
