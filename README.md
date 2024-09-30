@@ -1,4 +1,4 @@
-# IDTideMap
+# IDTideChart
 
 (c) 2024 Kris Coppieters - Rorohiko Ltd.
 
@@ -13,7 +13,7 @@ Server versions of _JSXGetURL_ are also available:
 
     https://rorohiko.com/sjsxgeturl
 
-`TideMap.jsx` uses _JSXGetURL_ to query the APIs located at https://api.tidesandcurrents.noaa.gov/
+`TideChart.jsx` uses _JSXGetURL_ to query the APIs located at https://api.tidesandcurrents.noaa.gov/
 
 _JSXGetURL_ is a native ExtendScript module which embeds CURL, and it allows the script to use CURL 
 in-process, which has less overheads than accessing web APIs by way of an external process.
@@ -48,33 +48,33 @@ visit the following URL (replacing _STATIONCODE_ with the actual station code):
 
 Download the script from the Releases folder in this repo. Go to
 
-[https://github.com/zwettemaan/IDTideMap/tree/main/Releases/IDTideMap.0.0.4.zip
-](https://github.com/zwettemaan/IDTideMap/blob/main/Releases/IDTideMap.0.0.4.zip)
+[https://github.com/zwettemaan/IDTideMap/tree/main/Releases/IDTideChart.0.0.5.zip
+](https://github.com/zwettemaan/IDTideMap/blob/main/Releases/IDTideChart.0.0.5.zip)
 
 and then click the small download button near the top right.
 
-Unzip the release _IDTideMap...zip_ file (on Windows, use Right-click, Extract All...; on Mac, double-click the .zip).
+Unzip the release _IDTideChart...zip_ file (on Windows, use Right-click, Extract All...; on Mac, double-click the .zip).
 
-Find and copy the `TideMap.idml` to a convenient location, e.g. your desktop.
+Find and copy the `TideChart.idml` to a convenient location, e.g. your desktop.
 
 Launch InDesign, and make the _Scripts_ panel visible (_Window - Utilities - Scripts_ menu).
 
 Right-click on the _User_ entry on the _Scripts_ panel, and select _Reveal in Finder_ or _Reveal in Explorer_.
 
-In the Finder or Explorer, copy or move the whole unzipped _IDTideMap.x.y.z_ folder _into_ the _Scripts Panel_ folder. 
+In the Finder or Explorer, copy or move the whole unzipped _IDTideChart.x.y.z_ folder _into_ the _Scripts Panel_ folder. 
 
-Switch back to InDesign. You should now be able to see the _IDTideMap.x.y.z_ entry inside the _User_ entry on the 
+Switch back to InDesign. You should now be able to see the _IDTideChart.x.y.z_ entry inside the _User_ entry on the 
 _Scripts_ panel.
 
 ## Using
 
-Use InDesign to open the _TideMap.idml_ file.
+Use InDesign to open the _TideChart.idml_ file.
 
 Check the pasteboard area on the left. Adjust the station code in the configuration frame on the InDesign pasteboard.
 
-On the _Scripts_ panel, open up the _IDTideMap_ entry and double-click _TideMap.jsx_
+On the _Scripts_ panel, open up the _IDTideChart_ entry and double-click _TideChart.jsx_
 
-A tide map for the next 24 hours should be created.
+A tide chart for the next 24 hours should be created.
 
 If you want to adjust the tide station code and re-run the script, you don't need to revert back to a blank template. 
 
@@ -91,4 +91,4 @@ restrictions.
 
 ## Juicy bits in the sample code
 
-Look for references to `getURL` in the `TideMap.jsx` source code.
+Look for references to `getURL` in the `TideChart.jsx` source code.
