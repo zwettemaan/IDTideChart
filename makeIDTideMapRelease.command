@@ -50,8 +50,8 @@ if [ ! -d Releases ]; then
     mkdir Releases
 fi
 
-rm -f Releases/"${ARCHIVE}".zip
-ditto -c -k --rsrc "${ARCHIVE}" Releases/"${ARCHIVE}".zip
+rm -f "Releases/${ARCHIVE}.zip"
+ditto -c -k --rsrc "${ARCHIVE}" "Releases/${ARCHIVE}.zip"
 
 rm -rf "${ARCHIVE}"
     
