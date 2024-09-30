@@ -34,6 +34,7 @@ gh repo clone zwettemaan/CRDT_ES -- --depth 1
 ditto -x -k --rsrc CRDT_ES/scripts/CreativeDeveloperTools_ES.nzip CreativeDeveloperTools_ESUnzip
 mv CreativeDeveloperTools_ESUnzip/CreativeDeveloperTools_ES CreativeDeveloperTools_ES
 rm -rf CreativeDeveloperTools_ESUnzip
+rm -rf CRDT_ES
 
 export VERSION=`head -n 1 Version.txt`
 export ARCHIVE="IDTideMap.${VERSION}"
