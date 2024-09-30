@@ -30,6 +30,9 @@ var CST = {};
 
 CST.DEFAULT_NOAA_STATION_CODE = "8722956";
 
+// 24 hour chart
+CST.NUMBER_OF_BARS            = 24;
+
 CST.FEET_PER_METER = 3.28084;
 
 CST.BASE_URL_API = "https://api.tidesandcurrents.noaa.gov/";
@@ -240,18 +243,18 @@ function fetchTideData(context) {
             beginTime.setHours(beginTime.getHours() + 1, 0, 0, 0);
 
             var endTime = new Date(beginTime);
-            endTime.setHours(beginTime.getHours() + 23, 0, 0, 0);
+            endTime.setHours(beginTime.getHours() + CST.NUMBER_OF_BARS - 1, 0, 0, 0);
             
             var url = 
                 CST.DATA_URL_API + "?" + 
-                CST.DATA_URL_PARAM_BEGIN_DATE + "=" + dateToGMTParamStr(beginTime) + "&" +
-                CST.DATA_URL_PARAM_END_DATE   + "=" + dateToGMTParamStr(endTime) + "&" +
-                CST.DATA_URL_PARAM_STATION    + "=" + context.noaaStationCode + "&" +
-                CST.DATA_URL_PARAM_PRODUCT    + "=" + CST.DATA_URL_VALUE_PRODUCT_PREDICTIONS + "&" +
+                CST.DATA_URL_PARAM_BEGIN_DATE + "=" + dateToGMTParamStr(beginTime) +                  "&" +
+                CST.DATA_URL_PARAM_END_DATE   + "=" + dateToGMTParamStr(endTime) +                    "&" +
+                CST.DATA_URL_PARAM_STATION    + "=" + context.noaaStationCode +                       "&" +
+                CST.DATA_URL_PARAM_PRODUCT    + "=" + CST.DATA_URL_VALUE_PRODUCT_PREDICTIONS +        "&" +
                 CST.DATA_URL_PARAM_DATUM      + "=" + CST.DATA_URL_VALUE_DATUM_MEAN_LOWER_LOW_WATER + "&" +
-                CST.DATA_URL_PARAM_INTERVAL   + "=" + CST.DATA_URL_VALUE_INTERVAL_HOURLY + "&" +
-                CST.DATA_URL_PARAM_UNITS      + "=" + CST.DATA_URL_VALUE_UNITS_METRIC + "&" +
-                CST.DATA_URL_PARAM_TIME_ZONE  + "=" + CST.DATA_URL_VALUE_TIME_ZONE_GMT + "&" +
+                CST.DATA_URL_PARAM_INTERVAL   + "=" + CST.DATA_URL_VALUE_INTERVAL_HOURLY +            "&" +
+                CST.DATA_URL_PARAM_UNITS      + "=" + CST.DATA_URL_VALUE_UNITS_METRIC +               "&" +
+                CST.DATA_URL_PARAM_TIME_ZONE  + "=" + CST.DATA_URL_VALUE_TIME_ZONE_GMT +              "&" +
                 CST.DATA_URL_PARAM_FORMAT     + "=" + CST.DATA_URL_VALUE_FORMAT_JSON;
             
             getURL.clearCurlOpt();
@@ -299,7 +302,7 @@ function fetchTideData(context) {
                     if (predictionDate.toString() == "Invalid Date") {
                         crdtes.logError(arguments, "response contains invalid date");
                         retVal = false;
-                        break
+                        break;
                     }
 
                     var predictionLevelMeter = parseFloat(prediction.v);
@@ -415,11 +418,11 @@ function main() {
             context = {};
             context.errorMessages = "";
 
+            loadOptionalLicense();
+
             if (! getURL.isJSXGetURLActivated()) {
                 reportErrorToUser(context, "No valid JSXGetURL license found - you will need to restart InDesign after each script run");
             }
-
-            loadOptionalLicense();
 
             if (! setupDocument(context)) {
                 break;
@@ -565,12 +568,12 @@ function generateTideChart(context) {
             // Delete any old graph bars, except one which will serve as a template
 
             var textFrames = collectionToArray(doc.textFrames);
-            var keepBar = undefined;
+            var retainTemplateBarFrame = undefined;
             for (var idx = 0; idx < textFrames.length; idx++) { 
                 var textFrame = textFrames[idx];
                 if (startsWith(textFrame.name, CST.FRAME_NAME_PREFIX_BAR)) {
-                    if (! keepBar) {
-                        keepBar = textFrame;
+                    if (! retainTemplateBarFrame) {
+                        retainTemplateBarFrame = textFrame;
                     }
                     else {
                         textFrame.remove();
@@ -582,23 +585,23 @@ function generateTideChart(context) {
 
             for (var idx = 0; idx < context.tideData.length; idx++) {
 
-                var tideChartFrame;
+                var tideChartVerticalBarFrame;
 
                 // For the first bar, we re-use the template, if there is one
 
-                if (keepBar) {
+                if (retainTemplateBarFrame) {
                     if (idx == 0) {
-                        tideChartFrame = keepBar;
+                        tideChartVerticalBarFrame = retainTemplateBarFrame;
                     }
                     else {
-                        tideChartFrame = keepBar.duplicate();
+                        tideChartVerticalBarFrame = retainTemplateBarFrame.duplicate();
                     }
                 }
                 else {
-                    tideChartFrame = doc.textFrames.add();
+                    tideChartVerticalBarFrame = doc.textFrames.add();
                 }
 
-                tideChartFrame.name = CST.FRAME_NAME_PREFIX_BAR + idx;
+                tideChartVerticalBarFrame.name = CST.FRAME_NAME_PREFIX_BAR + idx;
         
                 var tideData = context.tideData[idx];
 
@@ -607,7 +610,7 @@ function generateTideChart(context) {
                 var tideHeight = tideData.predictionLevelMeter;
                 var tideHeightFeet = tideHeight * CST.FEET_PER_METER;
 
-                tideChartFrame.contents = 
+                tideChartVerticalBarFrame.contents = 
                     leftPad(predictionDate.getHours(), 2, "0") + ":" + leftPad(predictionDate.getMinutes(), 2, "0") + "\r" +
                     tideHeightFeet.toFixed(1) + "ft\r" + tideHeight.toFixed(1) + "m\r";
 
@@ -624,7 +627,7 @@ function generateTideChart(context) {
                 var xBarUpperLeft = xParentRectangleUpperLeft + idx * widthGraphBarRectangle;
                 var xBarLowerLeft = xBarUpperLeft + widthGraphBarRectangle;
 
-                tideChartFrame.geometricBounds = [yBarUpperLeft, xBarUpperLeft, yBarLowerLeft, xBarLowerLeft];
+                tideChartVerticalBarFrame.geometricBounds = [yBarUpperLeft, xBarUpperLeft, yBarLowerLeft, xBarLowerLeft];
             }
 
             retVal = true;

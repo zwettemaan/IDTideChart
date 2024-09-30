@@ -2,8 +2,11 @@
 
 (c) 2024 Kris Coppieters - Rorohiko Ltd.
 
-This sample ready-to-run ExtendScript for InDesign uses data from NOAA (National Oceanic and Atmospheric Administration)
-to render a live one-page 24-hour tide chart for a designated location on a coast of the USA.
+This sample ready-to-run ExtendScript for InDesign uses data from 
+NOAA (National Oceanic and Atmospheric Administration) to render a 
+live one-page 24-hour tide chart for a designated location on a coast of the USA.
+
+The chart starts from 'now' and runs up to 'now' + 23.
 
 <img width="1847" alt="Screenshot 2024-10-01 at 9 40 13 AM" src="https://github.com/user-attachments/assets/57fe9c0c-c884-457d-bcea-600e29124672">
 
@@ -50,8 +53,8 @@ visit the following URL (replacing _STATIONCODE_ with the actual station code):
 
 Download the script from the Releases folder in this repo. Go to
 
-[https://github.com/zwettemaan/IDTideMap/tree/main/Releases/IDTideChart.0.0.5.zip
-](https://github.com/zwettemaan/IDTideMap/blob/main/Releases/IDTideChart.0.0.5.zip)
+[https://github.com/zwettemaan/IDTideMap/tree/main/Releases/IDTideChart.0.0.6.zip
+](https://github.com/zwettemaan/IDTideMap/blob/main/Releases/IDTideChart.0.0.6.zip)
 
 and then click the small download button near the top right.
 
