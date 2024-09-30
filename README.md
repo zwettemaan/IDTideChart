@@ -70,6 +70,9 @@ In the Finder or Explorer, copy or move the whole unzipped _IDTideChart.x.y.z_ f
 Switch back to InDesign. You should now be able to see the _IDTideChart.x.y.z_ entry inside the _User_ entry on the 
 _Scripts_ panel.
 
+<img width="654" alt="Screenshot 2024-10-01 at 9 49 25 AM" src="https://github.com/user-attachments/assets/9d58e5c3-1840-4148-9c7c-121773e81399">
+
+
 ## Using
 
 Use InDesign to open the _TideChart.idml_ file.
