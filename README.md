@@ -44,7 +44,7 @@ visit the following URL (replacing _STATIONCODE_ with the actual station code):
 
 ## Installing
 
-Unzip the release _IDTideMap...zip_ file
+Unzip the release _IDTideMap...zip_ file (on Windows, use Right-click, Extract All...; on Mac, double-click the .zip).
 
 Find and copy the `TideMap.indt` to a convenient location, e.g. your desktop.
 

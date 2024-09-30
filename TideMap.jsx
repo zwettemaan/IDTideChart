@@ -542,7 +542,7 @@ function main() {
     while (false);
         
     if (context.errorMessages) {        
-        alert("Errors:\n" + context.errorMessages);
+        alert("Messages:\n" + context.errorMessages);
     }
 
     crdtes.logExit(arguments);
