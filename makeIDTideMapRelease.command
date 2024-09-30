@@ -54,5 +54,7 @@ rm -f "Releases/${ARCHIVE}.zip"
 ditto -c -k --rsrc "${ARCHIVE}" "Releases/${ARCHIVE}.zip"
 
 rm -rf "${ARCHIVE}"
-    
+
+xcrun notarytool submit --password ${ROROHIKO_NOTARY_PASSWORD}  --apple-id ${ROROHIKO_NOTARY_APPLE_ID} --team-id ${ROROHIKO_NOTARY_TEAM_ID} --wait "Releases/${ARCHIVE}.zip"
+
 echo "makeIDTideMapRelease done"

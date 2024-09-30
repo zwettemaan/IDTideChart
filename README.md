@@ -52,9 +52,9 @@ Launch InDesign, and make the _Scripts_ panel visible (_Window - Utilities - Scr
 
 Right-click on the _User_ entry on the _Scripts_ panel, and select _Reveal in Finder_ or _Reveal in Explorer_.
 
-In the Finder or Explorer, copy the whole unzipped _IDTideMap_ folder _into_ the _Scripts Panel_ folder. 
+In the Finder or Explorer, copy or move the whole unzipped _IDTideMap.x.y.z_ folder _into_ the _Scripts Panel_ folder. 
 
-Switch back to InDesign. You should now be able to see the _IDTideMap_ entry inside the _User_ entry on the 
+Switch back to InDesign. You should now be able to see the _IDTideMap.x.y.z_ entry inside the _User_ entry on the 
 _Scripts_ panel.
 
 ## Using
