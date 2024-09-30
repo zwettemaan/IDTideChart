@@ -1,4 +1,4 @@
-# TideMap
+# IDTideMap
 
 (c) 2024 Kris Coppieters - Rorohiko Ltd.
 
