@@ -2,10 +2,10 @@
 
 (c) 2024 Kris Coppieters - Rorohiko Ltd.
 
-This sample ExtendScript for InDesign uses data from NOAA (National Oceanic and Atmospheric Administration)
+This sample ready-to-run ExtendScript for InDesign uses data from NOAA (National Oceanic and Atmospheric Administration)
 to render a live one-page 24-hour tide chart for a designated location on a coast of the USA.
 
-This script serves as a demo of _JSXGetURL_:
+This script serves as a demo of _JSXGetURL_. More info here:
 
     https://rorohiko.com/jsxgeturl
 
@@ -15,8 +15,10 @@ Server versions of _JSXGetURL_ are also available:
 
 `TideMap.jsx` uses _JSXGetURL_ to query the APIs located at https://api.tidesandcurrents.noaa.gov/
 
-_JSXGetURL_ is a native ExtendScript module which embeds CURL, and it allows the script to run CURL 
-in-process which has less overheads than using CURL by way of an external process.
+_JSXGetURL_ is a native ExtendScript module which embeds CURL, and it allows the script to use CURL 
+in-process, which has less overheads than accessing web APIs by way of an external process.
+
+More info about CURL: https://curl.se/docs/manpage.html
 
 Before you can run the script, you need to determine which NOAA tide station you want to use.
 
@@ -27,7 +29,7 @@ First, visit
 and use the interactive map to find a tide station.
 
 Pay attention to the type of station you select: there are also stations for current, 
-temperature and other types of measurements - these won't be able to provide tide information. 
+temperature and other types of measurements and these won't be able to provide tide information. 
 
 Example tide station codes:
 
