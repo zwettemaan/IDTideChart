@@ -17,7 +17,7 @@ rm -f JSXGetURL.zip
 curl https://rorohiko.com/downloads/JSXGetURL.zip --output JSXGetURL.zip
 
 rm -rf JSXGetURLUnzip
-ditto -xk --rsrc JSXGetURL.zip JSXGetURLUnzip
+unzip -q JSXGetURL.zip -d JSXGetURLUnzip
 
 rm -rf JSXGetURL
 mv JSXGetURLUnzip/JSXGetURL.*/JSXGetURL JSXGetURL
@@ -31,7 +31,7 @@ rm -rf CreativeDeveloperTools_ESUnzip
 
 gh repo clone zwettemaan/CRDT_ES -- --depth 1
 
-ditto -x -k --rsrc CRDT_ES/scripts/CreativeDeveloperTools_ES.nzip CreativeDeveloperTools_ESUnzip
+unzip -q CRDT_ES/scripts/CreativeDeveloperTools_ES.nzip -d CreativeDeveloperTools_ESUnzip
 mv CreativeDeveloperTools_ESUnzip/CreativeDeveloperTools_ES CreativeDeveloperTools_ES
 rm -rf CreativeDeveloperTools_ESUnzip
 rm -rf CRDT_ES
@@ -47,12 +47,17 @@ cp    TideMap.idml              "${ARCHIVE}"
 cp    TideMap.jsx               "${ARCHIVE}"
 cp    README.md                 "${ARCHIVE}"
 
+find "${ARCHIVE}" -name ".DS_Store" | while read a; do rm "$a"; done
+find "${ARCHIVE}" -name "__MACOSX" | while read a; do rm -rf "$a"; done
+
+xattr -cr "${ARCHIVE}"
+
 if [ ! -d Releases ]; then
     mkdir Releases
 fi
 
 rm -f "Releases/${ARCHIVE}.zip"
-ditto -c -k --rsrc "${ARCHIVE}" "Releases/${ARCHIVE}.zip"
+zip -r -y "Releases/${ARCHIVE}.zip" "${ARCHIVE}"
 
 rm -rf "${ARCHIVE}"
 
