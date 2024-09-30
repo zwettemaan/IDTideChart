@@ -43,7 +43,7 @@ mkdir "${ARCHIVE}"
 cp -R CreativeDeveloperTools_ES "${ARCHIVE}"
 cp -R JSXGetURL                 "${ARCHIVE}"
 cp    json2.js                  "${ARCHIVE}"
-cp    TideMap.indt              "${ARCHIVE}"
+cp    TideMap.idml              "${ARCHIVE}"
 cp    TideMap.jsx               "${ARCHIVE}"
 cp    README.md                 "${ARCHIVE}"
 

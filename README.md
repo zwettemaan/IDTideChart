@@ -48,14 +48,14 @@ visit the following URL (replacing _STATIONCODE_ with the actual station code):
 
 Download the script from the Releases folder in this repo. Go to
 
-[https://github.com/zwettemaan/IDTideMap/tree/main/Releases/IDTideMap.0.0.3.zip
-](https://github.com/zwettemaan/IDTideMap/blob/main/Releases/IDTideMap.0.0.3.zip)
+[https://github.com/zwettemaan/IDTideMap/tree/main/Releases/IDTideMap.0.0.4.zip
+](https://github.com/zwettemaan/IDTideMap/blob/main/Releases/IDTideMap.0.0.4.zip)
 
 and then click the small download button near the top right.
 
 Unzip the release _IDTideMap...zip_ file (on Windows, use Right-click, Extract All...; on Mac, double-click the .zip).
 
-Find and copy the `TideMap.indt` to a convenient location, e.g. your desktop.
+Find and copy the `TideMap.idml` to a convenient location, e.g. your desktop.
 
 Launch InDesign, and make the _Scripts_ panel visible (_Window - Utilities - Scripts_ menu).
 
@@ -68,7 +68,7 @@ _Scripts_ panel.
 
 ## Using
 
-Use InDesign to open the _TideMap.indt_ file.
+Use InDesign to open the _TideMap.idml_ file.
 
 Check the pasteboard area on the left. Adjust the station code in the configuration frame on the InDesign pasteboard.
 
