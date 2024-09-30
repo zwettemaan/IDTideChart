@@ -88,6 +88,9 @@ If you want to adjust the tide station code and re-run the script, you don't nee
 Simply adjust the station code and re-run. The script will clear the previous output and re-render with the newly selected
 tide station code.
 
+<img width="957" alt="Screenshot 2024-10-01 at 9 51 46 AM" src="https://github.com/user-attachments/assets/d2eb6a9b-207d-4a8a-8886-f1d12ded872d">
+
+
 ## Demo version of JSXGetURL
 
 By default, the script will use JSXGetURL in demo mode. JSXGetURL in demo mode is limited to five API calls,
