@@ -273,14 +273,6 @@ function fetchTideData(context) {
                 break;
             }
             
-            try {
-                var response = JSON.parse(responseJSON);
-            }
-            catch (err) {
-                crdtes.logError(arguments, "invalid JSON response, throws " + err);    
-                break;
-            }
-
             if (! response.predictions || response.predictions.length == 0) {
                 crdtes.logError(arguments, "no predictions listed in response");
                 break;
@@ -667,7 +659,7 @@ function reportErrorToUser(context, message) {
         }
         else {
             // Windows 'alert()' does not honor new lines
-            context.errorMessages += " ••• ";
+            context.errorMessages += " *** ";
         }
     }
     context.errorMessages += message;
