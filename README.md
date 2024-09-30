@@ -5,6 +5,8 @@
 This sample ready-to-run ExtendScript for InDesign uses data from NOAA (National Oceanic and Atmospheric Administration)
 to render a live one-page 24-hour tide chart for a designated location on a coast of the USA.
 
+<img width="1847" alt="Screenshot 2024-10-01 at 9 40 13 AM" src="https://github.com/user-attachments/assets/57fe9c0c-c884-457d-bcea-600e29124672">
+
 This script serves as a demo of _JSXGetURL_. More info here:
 
     https://rorohiko.com/jsxgeturl
@@ -52,6 +54,8 @@ Download the script from the Releases folder in this repo. Go to
 ](https://github.com/zwettemaan/IDTideMap/blob/main/Releases/IDTideChart.0.0.5.zip)
 
 and then click the small download button near the top right.
+
+<img width="1041" alt="Screenshot 2024-10-01 at 9 20 38 AM" src="https://github.com/user-attachments/assets/1ac88f35-bcf7-456d-80dc-146b7aef88d3">
 
 Unzip the release _IDTideChart...zip_ file (on Windows, use Right-click, Extract All...; on Mac, double-click the .zip).
 
