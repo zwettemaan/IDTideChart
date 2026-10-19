@@ -53,8 +53,8 @@ visit the following URL (replacing _STATIONCODE_ with the actual station code):
 
 Download the script from the Releases folder in this repo. Go to
 
-[https://github.com/zwettemaan/IDTideChart/tree/main/Releases/IDTideChart.0.0.6.zip
-](https://github.com/zwettemaan/IDTideChart/blob/main/Releases/IDTideChart.0.0.6.zip)
+[https://github.com/zwettemaan/IDTideChart/tree/main/Releases/IDTideChart.0.0.7.zip
+](https://github.com/zwettemaan/IDTideChart/blob/main/Releases/IDTideChart.0.0.7.zip)
 
 and then click the small download button near the top right.
 
